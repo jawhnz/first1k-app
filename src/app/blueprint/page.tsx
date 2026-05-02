@@ -55,7 +55,7 @@ export default function BlueprintPage() {
             <p className="text-sm text-[var(--color-text-muted)]">Your top 3 content themes based on performance data</p>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-6 stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 stagger">
           {bp.pillars.map((p) => <PillarCard key={p.rank} pillar={p} />)}
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function BlueprintPage() {
           <h3 className="text-lg font-bold">30-Day Posting Strategy</h3>
           <p className="text-sm text-[var(--color-text-muted)]">A week-by-week plan to build momentum</p>
         </div>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="space-y-4">
             {bp.strategy30Day.map((week) => (
               <Card key={week.week}>
@@ -139,7 +139,7 @@ export default function BlueprintPage() {
             <h3 className="text-lg font-bold">📈 Trend Insights</h3>
             <p className="text-sm text-[var(--color-text-muted)]">Current events and trends that could affect your content strategy</p>
           </div>
-          <div className="grid grid-cols-3 gap-6 stagger">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 stagger">
             {bp.trendInsights.map((t, i) => (
               <Card key={i}>
                 <div className="text-sm font-semibold mb-2">{t.trend}</div>

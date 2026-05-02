@@ -94,14 +94,14 @@ export default function First20Page() {
                   style={{ borderColor: phase.color }}
                 />
                 <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-[10px] p-4">
-                  <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-start justify-between gap-2 mb-2 flex-wrap sm:flex-nowrap">
                     <div>
                       <div className="text-xs font-bold mb-1" style={{ color: phase.color }}>
                         VIDEO #{video.number}
                       </div>
                       <div className="font-bold">{video.idea}</div>
                     </div>
-                    <div className="flex gap-2 shrink-0 ml-4">
+                    <div className="flex gap-2 shrink-0">
                       <Badge variant={categoryBadge[video.category] || 'purple'}>{video.category}</Badge>
                       <Badge variant="purple">{video.format}</Badge>
                     </div>
@@ -109,7 +109,7 @@ export default function First20Page() {
                   <p className="text-sm text-[var(--color-text-secondary)] mb-3">
                     <strong>Purpose:</strong> {video.purpose}
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="bg-[var(--color-bg-input)] rounded-[10px] p-3">
                       <div className="text-xs font-semibold text-[var(--color-blue)] uppercase tracking-wide mb-1">🎨 Packaging Angle</div>
                       <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{video.packagingAngle}</p>

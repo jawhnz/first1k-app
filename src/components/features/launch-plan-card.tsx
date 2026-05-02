@@ -22,7 +22,7 @@ export function LaunchPlanCard({ plan, index }: { plan: LaunchPlan; index: numbe
       </div>
 
       {/* Fields Grid */}
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
         <Field label="🕐 Best Publish Time" value={plan.bestTiming} />
         <Field label="📝 Title Approach" value={plan.titleApproach} />
         <Field label="🎨 Thumbnail Concept" value={plan.thumbnailConcept} />

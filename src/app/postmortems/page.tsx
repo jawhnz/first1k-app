@@ -63,7 +63,7 @@ export default function PostmortemsPage() {
       </div>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-3 gap-6 mb-8 stagger">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8 stagger">
         {topTypes.map(([type, count]) => (
           <StatCard key={type} icon="⚠" value={String(count)} label={type} bgColor="bg-[var(--color-red)]/10" />
         ))}

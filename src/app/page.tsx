@@ -57,7 +57,7 @@ export default function OverviewPage() {
           Here&apos;s your strategy overview based on {videos.length} videos and your Channel DNA
           profile.
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <Link
             href="/blueprint"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold text-sm shadow-[0_2px_8px_rgba(108,92,231,0.3)] hover:-translate-y-0.5 transition-all"
@@ -75,7 +75,7 @@ export default function OverviewPage() {
 
       {/* Stats */}
       {videos.length > 0 && (
-        <div className="grid grid-cols-4 gap-6 mb-8 stagger">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8 stagger">
           <StatCard icon="📊" value={String(videos.length)} label="Total Videos" />
           <StatCard
             icon="👁"
@@ -106,7 +106,7 @@ export default function OverviewPage() {
 
       {/* Themes */}
       {patterns && (
-        <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mb-8">
           <TopicList topics={patterns.topThemes} title="🔥 Top Performing Themes" />
           <TopicList topics={patterns.weakThemes} title="📉 Weakest Themes" />
         </div>
@@ -135,7 +135,7 @@ export default function OverviewPage() {
             View Full Blueprint →
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-6 stagger">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 stagger">
           {ideas.map((idea, i) => (
             <VideoIdeaCard key={i} idea={idea} index={i} />
           ))}
@@ -146,7 +146,7 @@ export default function OverviewPage() {
       {(shorts.length > 0 || longform.length > 0) && (
         <div>
           <h3 className="text-lg font-bold mb-6">Shorts vs Long-form</h3>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-[14px] p-6">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">📱</span>

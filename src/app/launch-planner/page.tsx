@@ -41,7 +41,7 @@ export default function LaunchPlannerPage() {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-6 mb-8 stagger">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8 stagger">
         <StatCard icon="🚀" value={String(plans.length)} label="Launch Plans Ready" bgColor="bg-[var(--color-primary)]/10" />
         <StatCard icon="📱" value={String(withShorts)} label="Need Shorts Teasers" change="Pre-launch discovery" positive bgColor="bg-[var(--color-pink)]/10" />
         <StatCard icon="🔗" value={String(seriesCandidates)} label="Series Candidates" change="Subscriber conversion" positive bgColor="bg-[var(--color-teal)]/10" />
@@ -55,7 +55,7 @@ export default function LaunchPlannerPage() {
       {/* Distribution Guide */}
       <section className="mt-8">
         <h3 className="text-lg font-bold mb-6">📢 General Distribution Guide</h3>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <StrategyPanel
             title="🕐 Timing Strategy"
             items={[

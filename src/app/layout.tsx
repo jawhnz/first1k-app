@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreProvider>
           <div className="flex h-screen overflow-hidden">
             <Sidebar />
-            <main className="flex-1 overflow-y-auto overflow-x-hidden p-8 scroll-smooth">
+            <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 pt-18 sm:p-6 sm:pt-18 lg:p-8 lg:pt-8 scroll-smooth">
               {children}
             </main>
           </div>

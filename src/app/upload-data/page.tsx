@@ -147,21 +147,21 @@ function AddVideoForm({ onAdd }: { onAdd: (v: Omit<VideoEntry, 'id'>) => void })
     <Card>
       <h3 className="font-bold text-lg mb-4">Add Video Entry</h3>
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Title</label><input name="title" className={inputCls} placeholder="e.g., Budget Gaming PC Under $500" /></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Topic</label><input name="topic" className={inputCls} placeholder="e.g., PC Building" /></div>
         </div>
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Format</label><select name="format" className={inputCls + ' appearance-none'}>{Object.values(ContentFormat).map(f => <option key={f} value={f}>{f}</option>)}</select></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Publish Date</label><input name="publishDate" type="date" className={inputCls} /></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Category</label><select name="category" className={inputCls + ' appearance-none'}>{Object.values(VideoCategory).map(c => <option key={c} value={c}>{c}</option>)}</select></div>
         </div>
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Impressions</label><input name="impressions" type="number" className={inputCls} placeholder="0" /></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">CTR (%)</label><input name="ctr" type="number" step="0.1" className={inputCls} placeholder="0.0" /></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Views</label><input name="views" type="number" className={inputCls} placeholder="0" /></div>
         </div>
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Avg Duration (sec)</label><input name="avgViewDuration" type="number" className={inputCls} placeholder="0" /></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Likes</label><input name="likes" type="number" className={inputCls} placeholder="0" /></div>
           <div><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Comments</label><input name="comments" type="number" className={inputCls} placeholder="0" /></div>

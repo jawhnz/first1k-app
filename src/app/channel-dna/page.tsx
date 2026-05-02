@@ -49,7 +49,7 @@ function DnaProfile({ dna, onEdit }: { dna: ChannelDNA; onEdit: () => void }) {
           </button>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <DnaField label="Target Audience" value={dna.targetAudience} />
           <DnaField label="Tone & Style" value={dna.toneStyle} />
           <DnaField
@@ -59,7 +59,7 @@ function DnaProfile({ dna, onEdit }: { dna: ChannelDNA; onEdit: () => void }) {
         </div>
       </Card>
 
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <Card>
           <h4 className="font-semibold mb-4">🎯 Content Goals</h4>
           <ul className="space-y-0">
@@ -90,7 +90,7 @@ function DnaProfile({ dna, onEdit }: { dna: ChannelDNA; onEdit: () => void }) {
         </Card>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card>
           <h4 className="font-semibold mb-4">🎬 Content Types</h4>
           <div className="flex flex-wrap gap-2">
@@ -174,7 +174,7 @@ function DnaForm({
       <form onSubmit={handleSubmit}>
         <Card className="mb-6">
           <h3 className="font-bold text-lg mb-4">Basic Info</h3>
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <FormField name="channelName" label="Channel Name" defaultValue={d?.channelName} placeholder="e.g., TechCraft with Alex" />
             <FormField name="niche" label="Niche" defaultValue={d?.niche} placeholder="e.g., Tech Reviews & PC Building" />
           </div>
