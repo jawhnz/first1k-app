@@ -50,7 +50,7 @@ export function Sidebar() {
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-1">
           <div className="w-7 h-7 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-light)] rounded-lg flex items-center justify-center text-xs text-white">
             ▶
           </div>
@@ -58,6 +58,20 @@ export function Sidebar() {
             First<span className="text-[var(--color-primary-light)]">1K</span>
           </span>
         </div>
+        {/* Mobile sample data toggle */}
+        <label className="flex items-center gap-2 cursor-pointer text-xs">
+          <div className="relative">
+            <input
+              type="checkbox"
+              checked={useSampleData}
+              onChange={(e) => toggleSampleData(e.target.checked)}
+              className="sr-only peer"
+            />
+            <div className="w-8 h-[18px] bg-[var(--color-bg-card)] rounded-full peer-checked:bg-[var(--color-primary)] transition-colors" />
+            <div className="absolute top-[2px] left-[2px] w-[14px] h-[14px] bg-[var(--color-text-muted)] rounded-full peer-checked:translate-x-3.5 peer-checked:bg-white transition-all" />
+          </div>
+          <span className="text-[var(--color-text-secondary)]">Sample</span>
+        </label>
       </div>
 
       {/* Backdrop */}
