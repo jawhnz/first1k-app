@@ -28,14 +28,14 @@ function DnaProfile({ dna, onEdit }: { dna: ChannelDNA; onEdit: () => void }) {
       </div>
 
       {/* Profile Card */}
-      <Card className="!rounded-[20px] !p-8 mb-8">
-        <div className="flex items-center gap-6 mb-6">
-          <div className="w-[72px] h-[72px] rounded-[14px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-pink)] flex items-center justify-center text-3xl font-extrabold text-white shrink-0">
+      <Card className="!rounded-[20px] !p-6 sm:!p-8 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
+          <div className="w-[56px] h-[56px] sm:w-[72px] sm:h-[72px] rounded-[14px] bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-pink)] flex items-center justify-center text-2xl sm:text-3xl font-extrabold text-white shrink-0">
             {dna.channelName[0]}
           </div>
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold">{dna.channelName}</h2>
-            <div className="flex gap-6 text-sm text-[var(--color-text-muted)] mt-1">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-xl sm:text-2xl font-bold truncate">{dna.channelName}</h2>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)] mt-1">
               <span>📺 {dna.niche}</span>
               <span>🎯 {dna.experienceLevel}</span>
               <span>📅 {dna.uploadFrequency}</span>
@@ -43,7 +43,7 @@ function DnaProfile({ dna, onEdit }: { dna: ChannelDNA; onEdit: () => void }) {
           </div>
           <button
             onClick={onEdit}
-            className="px-5 py-2.5 bg-[var(--color-bg-card)] border border-[var(--color-border-light)] rounded-[10px] text-sm font-semibold hover:border-[var(--color-primary)] transition-all"
+            className="self-start sm:self-center shrink-0 px-5 py-2.5 bg-[var(--color-bg-card)] border border-[var(--color-border-light)] rounded-[10px] text-sm font-semibold hover:border-[var(--color-primary)] transition-all"
           >
             Edit DNA
           </button>
