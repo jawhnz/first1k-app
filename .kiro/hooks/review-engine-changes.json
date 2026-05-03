@@ -1,0 +1,13 @@
+{
+  "name": "Review Engine Changes",
+  "version": "1.0.0",
+  "description": "Reviews changes to recommendation engine files to ensure they still reference Channel DNA and don't produce generic advice",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/engine/*.ts"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "An engine file was modified. Verify that: 1) All recommendation functions still accept and use ChannelDNA as a parameter, 2) No generic advice like 'post consistently' is generated, 3) Scoring functions return values in the 0-100 range, 4) The function has proper TypeScript return types."
+  }
+}

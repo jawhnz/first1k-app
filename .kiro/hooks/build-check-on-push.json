@@ -1,0 +1,13 @@
+{
+  "name": "Build Check Before Push",
+  "version": "1.0.0",
+  "description": "Reminds the agent to run a build check before any git push to catch TypeScript and compilation errors",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": ["shell"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "If this command is a git push, make sure you have run 'npm run build' first and confirmed it passes. Do not push code that has not been build-verified."
+  }
+}

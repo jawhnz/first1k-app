@@ -1,0 +1,13 @@
+{
+  "name": "Lint on Save",
+  "version": "1.0.0",
+  "description": "Runs ESLint on TypeScript and TSX files when they are saved to catch issues early",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["*.ts", "*.tsx"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npx eslint --no-error-on-unmatched-pattern ${file}"
+  }
+}
