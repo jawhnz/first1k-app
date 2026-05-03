@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useStore } from '@/store/provider';
 import { VideoEntry, ContentFormat, VideoCategory } from '@/types';
-import { getVideoPerformanceTier, getPerformanceBadgeColor } from '@/data/sample-videos';
+import { getPerformanceBadgeColor } from '@/data/sample-videos';
+import { getPerformanceTier } from '@/engine/scoring';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { clsx } from 'clsx';
@@ -92,7 +93,7 @@ function VideoList({ videos }: { videos: VideoEntry[] }) {
         </thead>
         <tbody>
           {videos.map((v) => {
-            const tier = getVideoPerformanceTier(v);
+            const tier = getPerformanceTier(v, videos);
             return (
               <tr key={v.id} className="hover:bg-[var(--color-bg-card-hover)] transition-colors">
                 <td className="px-4 py-3 text-sm font-medium max-w-[250px] truncate">{v.title}</td>
