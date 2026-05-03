@@ -168,7 +168,7 @@ function AddVideoForm({ onAdd }: { onAdd: (v: Omit<VideoEntry, 'id'>) => void })
         </div>
         <div className="mb-4"><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">Retention Notes</label><textarea name="retentionNotes" rows={2} className={inputCls + ' resize-y'} placeholder="Where do viewers drop off?" /></div>
         <div className="mb-4"><label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">AI Summary / Notes</label><textarea name="aiSummary" rows={2} className={inputCls + ' resize-y'} placeholder="Additional notes" /></div>
-        <button type="submit" className="px-6 py-2.5 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold text-sm shadow-[0_2px_8px_rgba(108,92,231,0.3)] hover:-translate-y-0.5 transition-all">
+        <button type="submit" className="px-6 py-2.5 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold text-sm shadow-[0_2px_8px_rgba(229,57,53,0.3)] hover:-translate-y-0.5 transition-all">
           Add Video
         </button>
       </form>

@@ -97,7 +97,7 @@ export function Sidebar() {
         <div className="p-6 border-b border-[var(--color-border)] flex items-center justify-between">
           <div>
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-light)] rounded-[10px] flex items-center justify-center text-base text-white shadow-[0_0_20px_rgba(108,92,231,0.15)]">
+              <div className="w-9 h-9 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-light)] rounded-[10px] flex items-center justify-center text-base text-white shadow-[0_0_20px_rgba(229,57,53,0.15)]">
                 ▶
               </div>
               <span className="text-xl font-extrabold tracking-tight">

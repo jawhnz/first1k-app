@@ -43,7 +43,7 @@ export default function OverviewPage() {
     <div className="animate-fade-in">
       {/* Hero */}
       <div className="bg-gradient-to-br from-[var(--color-primary)]/15 to-[var(--color-primary-light)]/5 border border-[var(--color-primary)]/20 rounded-[20px] p-8 mb-8 relative overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/5 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(108,92,231,0.1),transparent_70%)] pointer-events-none" />
+        <div className="absolute -top-1/2 -right-1/5 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(229,57,53,0.1),transparent_70%)] pointer-events-none" />
         <div className="flex items-center gap-3 mb-3">
           <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-pink)] rounded-[14px] flex items-center justify-center text-xl font-extrabold text-white">
             {channelDNA.channelName[0]}
@@ -60,7 +60,7 @@ export default function OverviewPage() {
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             href="/blueprint"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold text-sm shadow-[0_2px_8px_rgba(108,92,231,0.3)] hover:-translate-y-0.5 transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold text-sm shadow-[0_2px_8px_rgba(229,57,53,0.3)] hover:-translate-y-0.5 transition-all"
           >
             View Breakout Blueprint
           </Link>
@@ -211,7 +211,7 @@ function Welcome() {
         <div className="flex gap-4 justify-center">
           <Link
             href="/channel-dna"
-            className="px-7 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold shadow-[0_2px_8px_rgba(108,92,231,0.3)] hover:-translate-y-0.5 transition-all"
+            className="px-7 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold shadow-[0_2px_8px_rgba(229,57,53,0.3)] hover:-translate-y-0.5 transition-all"
           >
             Build Channel DNA →
           </Link>

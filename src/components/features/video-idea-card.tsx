@@ -6,7 +6,7 @@ export function VideoIdeaCard({ idea, index }: { idea: VideoIdea; index: number 
   const s = idea.scores;
   return (
     <div
-      className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-[14px] p-6 transition-all duration-250 hover:border-[var(--color-primary)] hover:shadow-[0_0_20px_rgba(108,92,231,0.15)] animate-fade-in"
+      className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-[14px] p-6 transition-all duration-250 hover:border-[var(--color-primary)] hover:shadow-[0_0_20px_rgba(229,57,53,0.15)] animate-fade-in"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="flex justify-between items-start mb-2">

@@ -18,7 +18,7 @@ function phase1(dna: ChannelDNA): First20Phase {
     name: 'Foundation',
     description: 'Establish your channel identity and capture early search traffic',
     videoRange: '1–5',
-    color: '#6C5CE7',
+    color: '#E53935',
     videos: [
       {
         number: 1,

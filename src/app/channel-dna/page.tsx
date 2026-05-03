@@ -229,7 +229,7 @@ function DnaForm({
         </Card>
 
         <div className="flex gap-3">
-          <button type="submit" className="px-7 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold shadow-[0_2px_8px_rgba(108,92,231,0.3)] hover:-translate-y-0.5 transition-all">
+          <button type="submit" className="px-7 py-3 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white rounded-[10px] font-semibold shadow-[0_2px_8px_rgba(229,57,53,0.3)] hover:-translate-y-0.5 transition-all">
             Save Channel DNA
           </button>
           {onCancel && (
@@ -244,7 +244,7 @@ function DnaForm({
 }
 
 function FormField({ name, label, defaultValue, placeholder, textarea }: { name: string; label: string; defaultValue?: string; placeholder?: string; textarea?: boolean }) {
-  const cls = "w-full bg-[var(--color-bg-input)] border border-[var(--color-border-light)] rounded-[10px] px-3.5 py-2.5 text-[var(--color-text)] outline-none focus:border-[var(--color-primary)] focus:shadow-[0_0_0_3px_rgba(108,92,231,0.08)] transition-all";
+  const cls = "w-full bg-[var(--color-bg-input)] border border-[var(--color-border-light)] rounded-[10px] px-3.5 py-2.5 text-[var(--color-text)] outline-none focus:border-[var(--color-primary)] focus:shadow-[0_0_0_3px_rgba(229,57,53,0.08)] transition-all";
   return (
     <div className="mb-4">
       <label className="text-sm font-medium text-[var(--color-text-secondary)] mb-1 block">{label}</label>
