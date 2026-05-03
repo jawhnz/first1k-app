@@ -8,6 +8,7 @@ import { BlockerCard } from '@/components/features/blocker-card';
 import { VideoIdeaCard } from '@/components/features/video-idea-card';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { LiveTrends } from '@/components/features/live-trends';
 
 export default function BlueprintPage() {
   const { channelDNA, videos } = useStore();
@@ -132,12 +133,21 @@ export default function BlueprintPage() {
         </div>
       </section>
 
-      {/* Trends */}
+      {/* Live Web Trends */}
+      <section className="mb-8">
+        <div className="mb-6">
+          <h3 className="text-lg font-bold">🌐 Live Trend Insights</h3>
+          <p className="text-sm text-[var(--color-text-muted)]">Real-time trends from the web that could affect your {channelDNA.niche} content strategy</p>
+        </div>
+        <LiveTrends channelDNA={channelDNA} pillars={bp.pillars} />
+      </section>
+
+      {/* Data-driven Trends */}
       {bp.trendInsights.length > 0 && (
         <section>
           <div className="mb-6">
-            <h3 className="text-lg font-bold">📈 Trend Insights</h3>
-            <p className="text-sm text-[var(--color-text-muted)]">Current events and trends that could affect your content strategy</p>
+            <h3 className="text-lg font-bold">📊 Data-Driven Insights</h3>
+            <p className="text-sm text-[var(--color-text-muted)]">Patterns from your own channel data that suggest strategic opportunities</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 stagger">
             {bp.trendInsights.map((t, i) => (

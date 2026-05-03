@@ -11,6 +11,7 @@ interface StoreContextValue extends AppState {
   addVideo: (video: Omit<VideoEntry, 'id'>) => void;
   setVideos: (videos: VideoEntry[]) => void;
   toggleSampleData: (enabled: boolean) => void;
+  clearAllData: () => void;
 }
 
 const StoreContext = createContext<StoreContextValue | null>(null);
@@ -72,9 +73,24 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  const clearAllData = useCallback(() => {
+    setState({
+      channelDNA: null,
+      videos: [],
+      useSampleData: false,
+    });
+    try {
+      localStorage.removeItem('first1k_state');
+      localStorage.removeItem('first1k_user_dna');
+      localStorage.removeItem('first1k_user_videos');
+    } catch {
+      // ignore
+    }
+  }, []);
+
   return (
     <StoreContext.Provider
-      value={{ ...state, setChannelDNA, addVideo, setVideos, toggleSampleData }}
+      value={{ ...state, setChannelDNA, addVideo, setVideos, toggleSampleData, clearAllData }}
     >
       {children}
     </StoreContext.Provider>

@@ -12,17 +12,61 @@ import { clsx } from 'clsx';
 type Tab = 'videos' | 'add' | 'csv';
 
 export default function UploadDataPage() {
-  const { videos, useSampleData, addVideo, setVideos, toggleSampleData } = useStore();
+  const { videos, useSampleData, addVideo, setVideos, toggleSampleData, clearAllData } = useStore();
   const [tab, setTab] = useState<Tab>('videos');
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
+
+  function handleClear() {
+    clearAllData();
+    setShowClearConfirm(false);
+    setTab('videos');
+  }
 
   return (
     <div className="animate-fade-in">
-      <div className="mb-8">
-        <h1 className="text-3xl font-extrabold mb-1">Upload Data</h1>
-        <p className="text-[var(--color-text-muted)]">
-          Add your video performance data — manually or via CSV upload
-        </p>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div>
+          <h1 className="text-3xl font-extrabold mb-1">Upload Data</h1>
+          <p className="text-[var(--color-text-muted)]">
+            Add your video performance data — manually or via CSV upload
+          </p>
+        </div>
+        {videos.length > 0 && (
+          <button
+            onClick={() => setShowClearConfirm(true)}
+            className="self-start px-4 py-2 bg-[var(--color-red)]/10 border border-[var(--color-red)]/20 text-[var(--color-red)] rounded-[10px] text-sm font-semibold hover:bg-[var(--color-red)]/20 transition-all shrink-0"
+          >
+            🗑 Clear All &amp; Start Fresh
+          </button>
+        )}
       </div>
+
+      {/* Clear confirmation modal */}
+      {showClearConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={() => setShowClearConfirm(false)}>
+          <div className="bg-[var(--color-bg-card)] border border-[var(--color-border-light)] rounded-[14px] p-6 max-w-md w-full animate-scale-in" onClick={(e) => e.stopPropagation()}>
+            <div className="text-3xl mb-3">⚠️</div>
+            <h3 className="text-lg font-bold mb-2">Start Fresh?</h3>
+            <p className="text-sm text-[var(--color-text-secondary)] mb-6">
+              This will permanently delete all your video data, Channel DNA profile, and generated recommendations. Sample data mode will be turned off. This cannot be undone.
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={handleClear}
+                className="flex-1 px-4 py-2.5 bg-[var(--color-red)] text-white rounded-[10px] text-sm font-semibold hover:opacity-90 transition-all"
+              >
+                Yes, Clear Everything
+              </button>
+              <button
+                onClick={() => setShowClearConfirm(false)}
+                className="flex-1 px-4 py-2.5 bg-[var(--color-bg-input)] border border-[var(--color-border-light)] rounded-[10px] text-sm font-semibold hover:border-[var(--color-primary)] transition-all"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {useSampleData && (
         <div className="bg-[var(--color-blue)]/10 border border-[var(--color-blue)]/20 rounded-[10px] p-4 mb-6 text-sm text-[var(--color-blue)] flex items-start gap-3">
